@@ -16,11 +16,13 @@ The repository is organized into modular folders, each focusing on a core compet
     *   Test-Driven Development practices, unit testing with JUnit 5, and dependency mocking with Mockito.
 *   **Module 5: Spring Core & Maven**
     *   Inversion of Control (IoC), Dependency Injection (DI), Maven project configuration, and Spring XML contexts.
+*   **Module 6: Spring Data JPA & Hibernate**
+    *   Entity mapping, Repositories, custom queries (HQL & Native SQL), and ORM principles.
 
 ## 🛠️ Tech Stack
 *   **Language:** Java (JDK 8 / 17)
 *   **Build Tool:** Maven
-*   **Frameworks:** Spring Core, Spring WebMVC
+*   **Frameworks:** Spring Core, Spring WebMVC, Spring Data JPA, Hibernate
 *   **Testing:** JUnit 5, Mockito
 *   **Database:** SQL / PL/SQL
 
