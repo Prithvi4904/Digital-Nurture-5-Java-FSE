@@ -18,13 +18,21 @@ The repository is organized into modular folders, each focusing on a core compet
     *   Inversion of Control (IoC), Dependency Injection (DI), Maven project configuration, and Spring XML contexts.
 *   **Module 6: Spring Data JPA & Hibernate**
     *   Entity mapping, Repositories, custom queries (HQL & Native SQL), and ORM principles.
+*   **Module 8: Microservices with Spring Boot & Spring Cloud**
+    *   Building distributed architectures, API Gateways, Service Discovery (Eureka), and robust microservices communication.
+*   **Module 9: Git & Version Control**
+    *   Branching, merging, conflict resolution, repository management, and collaboration best practices.
+*   **Module 10: Angular (Frontend Engineering)**
+    *   Standalone components, Routing, Reactive/Template-driven forms, RxJS Observables, NgRx State Management, and Unit Testing with Jasmine/Karma.
 
 ## 🛠️ Tech Stack
-*   **Language:** Java (JDK 8 / 17)
-*   **Build Tool:** Maven
-*   **Frameworks:** Spring Core, Spring WebMVC, Spring Data JPA, Hibernate
-*   **Testing:** JUnit 5, Mockito
+*   **Backend Language:** Java (JDK 8 / 17)
+*   **Frontend Language:** TypeScript, HTML5, CSS3
+*   **Build Tools:** Maven, npm, Angular CLI
+*   **Frameworks & Libraries:** Spring Core, Spring Boot, Spring WebMVC, Spring Data JPA, Spring Cloud, Hibernate, Angular 17+, NgRx, RxJS
+*   **Testing:** JUnit 5, Mockito, Jasmine, Karma
 *   **Database:** SQL / PL/SQL
+*   **Version Control:** Git & GitHub
 
 ## 💡 About this Repository
-This repository serves as a portfolio of my backend engineering skills. Every module is structured cleanly with its own documentation, adhering to industry best practices such as modular design, dependency injection, and proper version control management.
+This repository serves as a portfolio of my complete Full Stack Engineering skills. Every module is structured cleanly with its own documentation, adhering to industry best practices such as modular design, dependency injection, reactive state management, and proper version control.
