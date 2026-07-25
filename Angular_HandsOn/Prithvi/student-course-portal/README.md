@@ -1,59 +1,81 @@
-# StudentCoursePortal
+# Student Course Portal (Angular Hands-On Project)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.6.
+This repository contains the complete implementation of the **Cognizant Digital Nurture 5.0 Angular Hands-On** module. It covers all 10 hands-on exercises, demonstrating modern Angular concepts, best practices, and a scalable architecture.
 
-## Development server
+## Features & Implementation Details
 
-To start a local development server, run:
+### 1. Angular Basics & Architecture (Hands-on 1 & 2)
+- Generated using the Angular CLI.
+- Utilizes the modern **Standalone Components** architecture (no `ngModule`).
+- Component-driven design including `Home`, `CourseList`, `CourseCard`, `StudentProfile`, `Header`, and `Admin`.
 
-```bash
-ng serve
-```
+### 2. Directives & Pipes (Hands-on 3)
+- **Structural Directives:** Utilized `@if` and `@for` (or `*ngIf`/`*ngFor`) for dynamic rendering.
+- **Custom Directive:** Implemented `appHighlight` to dynamically change the background color of components.
+- **Custom Pipe:** Implemented `creditLabel` to format numbers into a standardized "Credits" string representation.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 3. Forms & Validation (Hands-on 4 & 5)
+- **Template-Driven Forms:** Used `ngModel` with HTML5 validation (required, minlength, email).
+- **Reactive Forms:** Used `FormBuilder` and `FormGroup` for robust, scalable form management.
+- **Custom Synchronous Validation:** Built a custom validator (`noWhitespaceValidator`) to prevent purely whitespace entries.
+- **Custom Asynchronous Validation:** Simulated backend API checks for existing emails using a custom async validator (`checkEmailExistsValidator`).
+- **Dynamic Form Arrays:** Allowed users to dynamically add and remove "Skills" via `FormArray`.
 
-## Code scaffolding
+### 4. Dependency Injection & Services (Hands-on 6)
+- Designed highly cohesive services injected seamlessly via Angular's robust Dependency Injection.
+- **CourseService:** A root-level service singleton for fetching global course data.
+- **EnrollmentService:** A component-level scoped service demonstrating customized provider injection boundaries.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 5. Routing & Navigation (Hands-on 7)
+- **Nested and Parameterized Routing:** Deep linking using `ActivatedRoute` (e.g., `/course/:id`).
+- **Programmatic Navigation:** Uses `Router.navigate` for dynamic logic-based transitions.
+- **Lazy Loading:** Optimizes initial load speed by lazy loading the `AdminComponent`.
+- **Route Protection:** Secures sensitive routes (like the Profile page) utilizing a functional `AuthGuard` (`CanActivateFn`).
 
-```bash
-ng generate component component-name
-```
+### 6. HTTP Client Integration (Hands-on 8)
+- Configured using the modern `provideHttpClient()` function in `app.config.ts`.
+- Subscribes to observables to handle HTTP `GET` requests from a mock backend (`json-server`).
+- Dynamic UI rendering based on `Observables` in `CourseListComponent`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 7. State Management with NgRx (Hands-on 9)
+- Fully integrated Redux pattern using **NgRx Version 20**.
+- **Store & Reducers:** Immutable global state management for the course list.
+- **Actions:** Defined strict action payloads (`loadCourses`, `loadCoursesSuccess`, `loadCoursesFailure`).
+- **Effects:** Uses `@ngrx/effects` to isolate side effects (HTTP calls) from components.
+- **Selectors:** Utilizes memoized selectors consumed in components via the `async` pipe.
 
-```bash
-ng generate --help
-```
+### 8. Unit Testing (Hands-on 10)
+- End-to-end unit test suite configured via **Jasmine and Karma**.
+- Achieves 100% passing tests (18/18) across the application.
+- Uses `HttpTestingController` to test service API boundaries.
+- Uses `provideMockStore` to test NgRx-connected components synchronously.
 
-## Building
+## How to Run the Application
 
-To build the project run:
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-```bash
-ng build
-```
+2. **Start the Mock Backend (json-server):**
+   Open a separate terminal and run:
+   ```bash
+   npx json-server --watch db.json
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. **Serve the Application:**
+   ```bash
+   ng serve
+   ```
+   Navigate to `http://localhost:4200/`.
 
-## Running unit tests
+## Running Unit Tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+To execute the unit tests via Karma and Jasmine:
 ```bash
 ng test
 ```
+*(Tests include comprehensive coverage for routing configuration, component rendering, mock stores, and HTTP testing).*
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+*Developed as part of the Digital Nurture 5.0 curriculum.*
