@@ -1,0 +1,32 @@
+<form #enrollmentForm="ngForm" (ngSubmit)="onSubmit(enrollmentForm)">
+  <div>
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" [(ngModel)]="studentName" required minlength="3" #nameCtrl="ngModel">
+    <div *ngIf="nameCtrl.invalid && nameCtrl.touched" class="error">
+      Name is required and must be at least 3 characters.
+    </div>
+  </div>
+  
+  <div>
+    <label for="course">Course:</label>
+    <select id="course" name="course" [(ngModel)]="course" required #courseCtrl="ngModel">
+      <option value="">Select a course</option>
+      <option value="Angular Basics">Angular Basics</option>
+      <option value="Web Development">Web Development</option>
+      <option value="Advanced RxJS">Advanced RxJS</option>
+    </select>
+    <div *ngIf="courseCtrl.invalid && courseCtrl.touched" class="error">
+      Course selection is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" required email #emailCtrl="ngModel">
+    <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="error">
+      Valid email is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="enrollmentForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,24 @@
+<div class="profile">
+  <h2>{{ studentName }}'s Profile</h2>
+  <p>Age: {{ age }}</p>
+  
+  <p *ngIf="isEligible; else notEligible">
+    Status: Eligible for enrollment.
+  </p>
+  <ng-template #notEligible>
+    <p>Status: Not eligible for enrollment.</p>
+  </ng-template>
+
+  <h3>Enrolled Courses:</h3>
+  <ul>
+    <li *ngFor="let course of enrolledCourses"
+        [ngStyle]="{'font-weight': courseProgress[course] === 100 ? 'bold' : 'normal'}"
+        [ngClass]="{'completed': courseProgress[course] === 100, 'in-progress': courseProgress[course] < 100}">
+      {{ course }} - {{ courseProgress[course] }}%
+    </li>
+  </ul>
+
+  <p>Fee: {{ fee | currency:'USD' }}</p>
+  <p>Enrolled On: {{ enrollmentDate | date:'longDate' }}</p>
+  <p>Course Credits: {{ 3 | creditLabel }}</p>
+</div>

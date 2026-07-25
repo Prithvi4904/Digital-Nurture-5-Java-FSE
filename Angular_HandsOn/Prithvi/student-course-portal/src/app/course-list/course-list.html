@@ -1,0 +1,15 @@
+<div class="course-list">
+  <h2>Available Courses</h2>
+  <button (click)="refreshCourses()">Refresh Courses</button>
+  
+  <div *ngIf="loading$ | async">Loading courses...</div>
+  <div *ngIf="error$ | async as error" class="error">{{ error.message || error }}</div>
+
+  <ul>
+    <ng-container *ngIf="(courses$ | async) as courses">
+      @for (course of courses; track course.id) {
+        <app-course-card [courseName]="course.name" (courseSelected)="onCourseSelected(course.id)" [appHighlight]="'yellow'"></app-course-card>
+      }
+    </ng-container>
+  </ul>
+</div>
